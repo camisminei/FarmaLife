@@ -1,32 +1,208 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar
+    app
+    color="white"
+    height="80">
+      <v-avatar
+        class="mr-3"
+        size="70">
+        <v-img
+        contain
+        max-height="70%"
+        src="https://guiadafarmacia.com.br/wp-content/uploads/2017/10/favicon-g.png"></v-img>
+      </v-avatar>
+      <v-toolbar-title>
+        <span class="farma">Farma</span>
+        <span class="life">Life</span>
+      </v-toolbar-title>
+    </v-app-bar>
+
+    <v-content>
+      <section id="welcome-s1">
+        <v-row no-gutters>
+          <v-img
+            gradient="to top right, rgba(92, 92, 92, 0.534), rgba(92, 92, 92, 0.534)"
+            class="imagem-background"
+            :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
+            src="https://images.unsplash.com/photo-1581091014534-898da33e356e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+
+            <v-theme-provider dark>
+              <v-container fill-height>
+                <v-row
+                align="center"
+                justify="center"
+                class="text-center">
+                  <v-col
+                  class="text-center"
+                  cols="12"
+                  tag="h1">
+                    <span class="welcome-to">
+                      Welcome To
+                    </span>
+                    <br>
+                    <span class="welcome-farmalife">FarmaLife</span>
+                  </v-col>
+
+                  <v-btn
+                    class="align-self-end"
+                    fab
+                    outlined
+                    @click="$vuetify.goTo('#about-us')"
+                  >
+                    <v-icon>mdi-chevron-double-down</v-icon>
+                  </v-btn>
+
+                </v-row>
+              </v-container>
+            </v-theme-provider>
+          </v-img>
+        </v-row>
+      </section>
+
+      <section id="about-us">
+        <div class="py-12"></div>
+        <v-container class="text-center">
+          <h2 class="title-about-us">ABOUT US</h2>
+
+          <v-responsive
+          class="mx-auto mb-8"
+          width="85">
+          <v-divider class="mb-1"></v-divider>
+          <v-divider class="m-top-div"></v-divider>
+          </v-responsive>
+
+          <v-responsive
+          class="mx-auto text-about-us"
+          max-width="720">
+          Lorem ipsum tortor eros nullam lacinia fringilla consequat urna, sed purus sodales ultricies maecenas consectetur per, porttitor volutpat justo ante dolor luctus commodo. nunc et ligula at dictum sagittis aliquet rhoncus erat posuere leo lectus pretium, eget mattis suscipit per placerat habitasse donec tempus quisque consectetur. 
+          diam nostra lobortis cubilia fringilla convallis netus duis aliquet sociosqu fringilla tincidunt ultricies arcu rhoncus, ornare habitasse augue per curabitur elementum lorem tempus quisque faucibus tortor purus. malesuada ligula dapibus felis interdum urna tempor vel nulla malesuada tempus, mattis enim quam placerat inceptos fermentum 
+          eu orci sodales purus in, lacinia in elit luctus leo porttitor mattis volutpat per. 
+          </v-responsive>
+        </v-container>
+        <div class="py-12"></div>
+      </section>
+
+      <section id="stats">
+        
+       <v-parallax
+          :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
+          src="https://images.unsplash.com/photo-1579154392429-0e6b4e850ad2?ixlib=rb-1.2.1&auto=format&fit=crop&w=397&q=80"
+        >
+          <v-container fill-height>
+            <v-row class="mx-auto">
+              <v-col
+                v-for="[value, title] of stats"
+                :key="title"
+                cols="12"
+                md="3"
+              >
+                <div class="text-center">
+                  <div
+                    class="display-3 font-weight-black mb-4"
+                    v-text="value"
+                  ></div>
+
+                  <div
+                    class="title font-weight-regular text-uppercase"
+                    v-text="title"
+                  ></div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-parallax>
+      </section>
+
+
+      <section id="about-us">
+        <div class="py-12"></div>
+        <v-container class="text-center">
+          <h2 class="title-about-us">ABOUT US</h2>
+
+          <v-responsive
+          class="mx-auto mb-8"
+          width="85">
+          <v-divider class="mb-1"></v-divider>
+          <v-divider class="m-top-div"></v-divider>
+          </v-responsive>
+
+          <v-responsive
+          class="mx-auto text-about-us"
+          max-width="720">
+          Lorem ipsum tortor eros nullam lacinia fringilla consequat urna, sed purus sodales ultricies maecenas consectetur per, porttitor volutpat justo ante dolor luctus commodo. nunc et ligula at dictum sagittis aliquet rhoncus erat posuere leo lectus pretium, eget mattis suscipit per placerat habitasse donec tempus quisque consectetur. 
+          diam nostra lobortis cubilia fringilla convallis netus duis aliquet sociosqu fringilla tincidunt ultricies arcu rhoncus, ornare habitasse augue per curabitur elementum lorem tempus quisque faucibus tortor purus. malesuada ligula dapibus felis interdum urna tempor vel nulla malesuada tempus, mattis enim quam placerat inceptos fermentum 
+          eu orci sodales purus in, lacinia in elit luctus leo porttitor mattis volutpat per. 
+          </v-responsive>
+        </v-container>
+      </section>
+
+    </v-content>
+  </v-app>
 </template>
 
+<script>
+export default {
+  
+}
+</script>
+
+
+
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap');
+
+
+span{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.farma{
+  color: red;
+}
+
+.life{
+  color: rgb(100, 100, 100);
+  
+}
+
+.welcome-to{
+  font-weight: 100;
+  font-size: 2.8rem;
+  color: rgba(255, 254, 254, 0.966);
+}
+
+.welcome-farmalife{
+  font-weight: 700;
+  font-size: 5.6rem;
+  color: rgba(255, 255, 255, 0.966);;
+}
+
+h2{
+  font-family: Archivo;
+  font-size: 3rem;
+}
+
+.title-about-us{
+  color: rgb(124, 124, 124);
+}
+
+.text-about-us{
+  font-family: Archivo;
+  font-size: 1.2rem;
+  justify-content: center;
   text-align: center;
-  color: #2c3e50;
+  color: rgb(124, 124, 124);
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.m-top-div{
+  margin-top: 0.9rem;
 }
 </style>
+
+
