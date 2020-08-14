@@ -1,19 +1,8 @@
-# farma-life
+# Projeto de estudo front-end que foi utilizado o modelo (https://parallax-theme-free.johnleider.com/?ref=vuetifyjs.com). 
 
-## Project setup
-```
-npm install
-```
+Linguagens utilizadas:
+* Vuetify
+* Vue
+* CSS
+* JavaScript
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
