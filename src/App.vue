@@ -88,7 +88,7 @@
        <v-parallax
           dark
           :height= "$vuetify.breakpoint.smAndDown ? 700 : 500"
-          src="https://images.unsplash.com/photo-1579154392013-64f6ab5c2aa3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1394&q=80"
+          src="https://images.unsplash.com/photo-1592840403093-06119ccc519c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"
         >
           <v-container fill-height>
             <v-row class="mx-auto">
@@ -96,7 +96,7 @@
                 v-for="[value, title] of stats"
                 :key="title"
                 cols="12"
-                md="3"
+                md="6"
               >
                 <div class="text-center">
                   <div
@@ -200,14 +200,17 @@
               placeholder="Message"
             ></v-textarea>
           </v-col>
-
           </v-theme-provider>
+          <div>
+            <v-btn class="primary" large>submit</v-btn>
+          </div>
           </v-container>
+          <div class="py-4"></div>
       </v-sheet>
 
       <v-footer
       class="rodape"
-      color="#EF5350"
+      color="#424242"
       height="60vh">
 
         <div class="rodape">
@@ -221,7 +224,16 @@
 
 <script>
 export default {
-  
+  props:{
+    source:String,
+  },
+  name:"App",
+  data: ()=>({
+    stats:[
+      ['2010 → 1 UNIT', 'Since'],
+      ['2020 → +250 UNITS', 'NOW'],
+    ]
+  })
 }
 </script>
 
@@ -230,7 +242,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap');
 
 
-span{
+
+.farma,
+.life{
   font-family: 'Exo 2', sans-serif;
   font-weight: 700;
   font-size: 1.8rem;
@@ -246,15 +260,15 @@ span{
 }
 
 .welcome-to{
-  font-weight: 100;
-  font-size: 2.8rem;
-  color: rgba(255, 254, 254, 0.966);
+  font: 400 3.6rem Archivo;
+  color: rgba(255, 255, 255, 0.966);
 }
 
 .welcome-farmalife{
+ font-family: 'Exo 2', sans-serif;
   font-weight: 700;
   font-size: 5.6rem;
-  color: rgba(255, 255, 255, 0.966);;
+  color: rgba(255, 255, 255, 0.966);
 }
 
 h2{
