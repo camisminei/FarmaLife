@@ -86,8 +86,9 @@
       <section id="stats">
         
        <v-parallax
-          :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
-          src="https://images.unsplash.com/photo-1579154392429-0e6b4e850ad2?ixlib=rb-1.2.1&auto=format&fit=crop&w=397&q=80"
+          dark
+          :height= "$vuetify.breakpoint.smAndDown ? 700 : 500"
+          src="https://images.unsplash.com/photo-1579154392013-64f6ab5c2aa3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1394&q=80"
         >
           <v-container fill-height>
             <v-row class="mx-auto">
@@ -115,10 +116,10 @@
       </section>
 
 
-      <section id="about-us">
+      <section id="work-with-us">
         <div class="py-12"></div>
         <v-container class="text-center">
-          <h2 class="title-about-us">ABOUT US</h2>
+          <h2 class="title-work-with-us">WORK WITH US</h2>
 
           <v-responsive
           class="mx-auto mb-8"
@@ -128,15 +129,92 @@
           </v-responsive>
 
           <v-responsive
-          class="mx-auto text-about-us"
+          class="mx-auto text-work-with-us"
           max-width="720">
+          <h3 class="font-italic">Come join our team!</h3><br>
           Lorem ipsum tortor eros nullam lacinia fringilla consequat urna, sed purus sodales ultricies maecenas consectetur per, porttitor volutpat justo ante dolor luctus commodo. nunc et ligula at dictum sagittis aliquet rhoncus erat posuere leo lectus pretium, eget mattis suscipit per placerat habitasse donec tempus quisque consectetur. 
-          diam nostra lobortis cubilia fringilla convallis netus duis aliquet sociosqu fringilla tincidunt ultricies arcu rhoncus, ornare habitasse augue per curabitur elementum lorem tempus quisque faucibus tortor purus. malesuada ligula dapibus felis interdum urna tempor vel nulla malesuada tempus, mattis enim quam placerat inceptos fermentum 
-          eu orci sodales purus in, lacinia in elit luctus leo porttitor mattis volutpat per. 
           </v-responsive>
-        </v-container>
-      </section>
 
+          <v-responsive
+          class="mx-auto text-work-with-us"
+          max-width="720">
+          
+          <h3 class="mt-10 font-italic">Benefits</h3><br>
+
+          <p>Career path;</p> 
+          <p>Training and qualification of employees;</p>
+          <p>Market compatible wage;</p>
+          <p>Health / dental plan;</p>
+          <p>Meal or food aid;</p>
+          <p>Group life insurance;</p>
+          <p>Transportation vouchers;</p>
+          <p>Profit sharing and Pharmacy discount.</p>
+          </v-responsive>
+
+        </v-container>
+        <div class="py-12"></div>
+      </section>
+      
+      <v-sheet
+        id="contact"
+        color="#616161"
+        dark
+        tag="section"
+        >
+          <div class="py-12"></div>
+
+          <v-container class="text-center">
+              <h2 class="title-contact">CONTACT</h2>
+              <v-responsive
+              class="mx-auto mb-8"
+              width="85">
+              <v-divider class="mb-1"></v-divider>
+              <v-divider class="m-top-div"></v-divider>
+              </v-responsive>
+          <v-theme-provider light>
+
+            <v-col cols="12" sm="12" md="12">
+
+            <v-text-field
+              label="Solo"
+              placeholder="Name"
+              solo>
+            </v-text-field>
+
+              <v-text-field
+              label="Solo"
+              placeholder="Email"
+              solo>
+            </v-text-field>
+
+            <v-text-field
+              label="Solo"
+              placeholder="Number"
+              solo>
+            </v-text-field>
+          
+            <v-textarea
+              solo
+              name="input-7-4"
+              label="Solo"
+              placeholder="Message"
+            ></v-textarea>
+          </v-col>
+
+          </v-theme-provider>
+          </v-container>
+      </v-sheet>
+
+      <v-footer
+      class="rodape"
+      color="#EF5350"
+      height="60vh">
+
+        <div class="rodape">
+          {{ new Date().getFullYear()}} - <strong>Vuetify</strong> - Made with ♥  by itsmneii
+        </div>
+
+      </v-footer>
     </v-content>
   </v-app>
 </template>
@@ -146,10 +224,6 @@ export default {
   
 }
 </script>
-
-
-
-
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&display=swap');
@@ -188,11 +262,17 @@ h2{
   font-size: 3rem;
 }
 
-.title-about-us{
+.title-about-us,
+.title-work-with-us{
   color: rgb(124, 124, 124);
 }
 
-.text-about-us{
+.title-contact{
+  color: rgba(255, 251, 251, 0.932);
+}
+
+.text-about-us,
+.text-work-with-us{
   font-family: Archivo;
   font-size: 1.2rem;
   justify-content: center;
@@ -203,6 +283,18 @@ h2{
 .m-top-div{
   margin-top: 0.9rem;
 }
+
+.v-application p {
+  margin-bottom: 0;
+}
+
+.rodape{
+  text-align: center;
+  justify-content: center;
+  color:rgba(255, 251, 251, 0.932);
+}
+
+
 </style>
 
 
